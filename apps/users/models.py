@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-
+from django.conf import settings
 
 class User(AbstractUser):
     phone = models.CharField(max_length=20, blank=True, null=True)
@@ -26,18 +26,18 @@ class Role(models.Model):
         return self.name
     
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     bio = models.TextField(blank=True, null=True)
 
-    PRIVACY_CHOICES = [
-        ('public', 'Public'),
-        ('private', 'Private'),
-    ]
+    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
 
     privacy_level = models.CharField(
         max_length=20,
-        choices=PRIVACY_CHOICES,
+        choices=[
+            ('public', 'Public'),
+            ('private', 'Private'),
+        ],
         default='public'
     )
 
