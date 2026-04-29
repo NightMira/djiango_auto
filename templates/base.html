@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoService</title>
+
+    <!-- Tailwind CDN (быстро и современно) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="bg-gray-950 text-white min-h-screen">
+
+<!-- NAVBAR -->
+<nav class="bg-gray-900 border-b border-gray-800">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+
+        <div class="text-xl font-bold text-blue-400">
+            AutoService
+        </div>
+
+        <div class="space-x-6 text-gray-300">
+            <a href="/" class="hover:text-white">Главная</a>
+            <a href="/services/" class="hover:text-white">Услуги</a>
+            <a href="/orders/" class="hover:text-white">Заказы</a>
+            <a href="/cars/" class="hover:text-white">Авто</a>
+        </div>
+
+    </div>
+</nav>
+
+<!-- CONTENT -->
+<main class="max-w-6xl mx-auto p-6">
+    {% block content %}
+    {% endblock %}
+</main>
+
+</body>
+</html>

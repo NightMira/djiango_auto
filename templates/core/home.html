@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="text-center py-12">
+
+    <h1 class="text-4xl font-bold mb-4">
+        Добро пожаловать в AutoService
+    </h1>
+
+    <p class="text-gray-400 mb-10">
+        Система управления автосервисом нового поколения
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <a href="/services/" class="bg-gray-900 p-6 rounded-xl hover:bg-gray-800 transition">
+            <h2 class="text-xl font-semibold text-blue-400">Услуги</h2>
+            <p class="text-gray-400">Просмотр и заказ услуг</p>
+        </a>
+
+        <a href="/orders/" class="bg-gray-900 p-6 rounded-xl hover:bg-gray-800 transition">
+            <h2 class="text-xl font-semibold text-green-400">Заказы</h2>
+            <p class="text-gray-400">История и статус заказов</p>
+        </a>
+
+        <a href="/cars/" class="bg-gray-900 p-6 rounded-xl hover:bg-gray-800 transition">
+            <h2 class="text-xl font-semibold text-purple-400">Автомобили</h2>
+            <p class="text-gray-400">Ваши машины в системе</p>
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
