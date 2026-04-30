@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ service.name }}</h1>
+
+{% if service.image %}
+    <img src="{{ service.image.url }}" width="400">
+{% endif %}
+
+<p>{{ service.description }}</p>
+
+<p><b>Цена: {{ service.price }} ₽</b></p>
+
+<a href="/services/">← Назад</a>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Ваш заказ</h1>
+
+{% if order %}
+    <ul>
+        {% for item in order.orderservice_set.all %}
+            <li>
+                {{ item.service.name }} —
+                {{ item.quantity }} × {{ item.price_at_time }} ₽
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Итого: {{ order.total_price }} ₽</h3>
+
+{% else %}
+    <p>Корзина пуста</p>
+{% endif %}
+
+{% endblock %}

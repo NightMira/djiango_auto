@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Автосервис</title>
-</head>
-<body>
-    <h1>🚗 Автосервис система работает</h1>
+{% extends "base.html" %}
 
-    <ul>
-        <li><a href="/admin/">Админка</a></li>
-    </ul>
-</body>
-</html>
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<h1>🚗 Автосервис система работает</h1>
+
+<p>Добро пожаловать в систему управления автосервисом</p>
+
+<ul>
+    <li>Users module</li>
+    <li>Cars module</li>
+    <li>Orders module</li>
+    <li>Services module</li>
+</ul>
+{% endblock %}
